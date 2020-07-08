@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+    background-color: #eaeaea;
+    min-height: 97vh;
+    height: 100%;
+    width: 100%;
+}
+
+.container-block {
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0, .2);
+}
+
+
+.box {
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #848484;
+    /*margin: 1rem;*/
+    /*width: fit-content;*/
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+/*!*smartphone*!*/
+/*@media screen and (max-width: 320px) {*/
+/*    .container-block {*/
+/*        padding: 0.5rem;*/
+/*    }*/
+/*}*/
+/*!*tablet*!*/
+/*@media screen and (max-width: 740px) and (min-width: 321px) {*/
+/*    .container-block {*/
+/*        padding: 0.5rem;*/
+/*    }*/
+/*}*/
+/*!*full HD*!*/
+/*@media screen and (max-width: 1080px) and (min-width: 741px){}*/
+
+/*!*4k, 5k*!*/
+/*@media screen and (min-width: 1081px) {}*/

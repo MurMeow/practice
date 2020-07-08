@@ -1,0 +1,132 @@
+.currencyDetails-block {
+  .flex {
+    justify-content: start;
+    margin-bottom: 2rem;
+    h2 {
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  .history-block {
+    width: 100%;
+    .detailHistory {
+      width: 40%;
+      .flex {
+        .detailHistory-block {
+           margin: 0 1rem 0 0;
+           width: 49%;
+          .react-calendar {
+            width: 100%;
+            .react-calendar__navigation {
+              margin-bottom: 0em;
+              button {
+                min-width: 30px;
+              }
+            }
+            .react-calendar__viewContainer {
+              .react-calendar__month-view__weekdays__weekday {
+                padding: 0.4em;
+                text-transform: none;
+              }
+              .react-calendar__tile {
+                padding: 0.4em 0.5em;
+              }
+              .react-calendar__tile--active {
+                background: #17a2b8;
+              }
+            }
+          }
+        }
+      }
+        h5.detailHistory-block_button {
+          background-color: #17a2b8;
+          color: #fff;
+          text-align: center;
+          cursor: pointer;
+        }
+    }
+    .chart-block {
+      width: 60%;
+    }
+  }
+}
+
+
+
+//smartphone
+@media screen and (max-width: 320px) {
+  .currencyDetails-block {
+    .history-block {
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      .detailHistory {
+        width: auto;
+        .flex.date {
+          flex-direction: column;
+          margin-bottom: 0;
+          .detailHistory-block {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            .currencyDetails-block .history-block .detailHistory .flex .detailHistory-block .react-calendar .react-calendar__viewContainer .react-calendar__tile {
+              padding: 0.3em 0.3em;
+            }
+          }
+        }
+      }
+
+      .chart-block {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .flex {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+//tablet
+@media screen and (max-width: 740px) and (min-width: 321px){
+  .currencyDetails-block {
+    .history-block {
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      .detailHistory {
+        width: 100%;
+        .flex.date {
+          flex-direction: row;
+          justify-content: space-between;
+          .detailHistory-block {
+            margin: 0;
+            width: 49%;
+            .currencyDetails-block .history-block .detailHistory .flex .detailHistory-block .react-calendar .react-calendar__viewContainer .react-calendar__tile {
+              padding: 0.3em 0.3em;
+            }
+          }
+        }
+      }
+
+      .chart-block {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .flex .column {
+      margin-bottom: 0.5rem;
+    }
+
+    & .flex {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+//full HD
+@media screen and (max-width: 1080px) and (min-width: 741px){}
+
+//4k, 5k
+@media screen and (min-width: 1081px) {}
