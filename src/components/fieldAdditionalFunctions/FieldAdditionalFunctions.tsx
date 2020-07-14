@@ -1,7 +1,15 @@
-import React from 'react'
-import './fieldAdditionalFunctions.scss'
-import NavigationCard from '../app/navigationCard/NavigationCard'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import './fieldAdditionalFunctions.scss'
+import { getBirthdays, getMajorCurrencyRates } from './helper'
+import { changeFormatCurrency } from '../../helpers'
+import { URLRequestCurrencyToday } from '../../consts'
+import { Store } from '../../store/interface'
+import { CATCH_ERRORS, CURRENCY_SUCCESS, PRELOADER_LAUNCH, PRELOADER_STOP } from '../../store/types'
+import NavigationCard from '../app/navigationCard/NavigationCard'
+import getRequestService from '../../services/getRequestService'
+
 
 interface FieldAdditionalFunctionsProps {
 	isOpen: boolean
@@ -9,8 +17,52 @@ interface FieldAdditionalFunctionsProps {
 }
 
 const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isOpen = false, changeState }) => {
+
+	const { currencyForToday } = useSelector((store: Store) => ({
+		currencyForToday: store.CurrencyRequest.currencyForToday,
+	}))
+	const { contacts } = useSelector((store: Store) => ({
+		contacts: store.Contacts.contacts,
+	}))
+
+	const dispatch = useDispatch()
+
+	async function getFetchCurrencyForToday() {
+		dispatch({ type: PRELOADER_LAUNCH })
+		try {
+			const currencyForToday = await getRequestService(URLRequestCurrencyToday)
+			dispatch({ type: PRELOADER_STOP })
+			const currencyForTodayNewFormat = changeFormatCurrency(currencyForToday.data)
+			dispatch({ type: CURRENCY_SUCCESS, payload: currencyForTodayNewFormat })
+		} catch (error) {
+				dispatch({ type: PRELOADER_STOP })
+				dispatch({ type: CATCH_ERRORS, payload: error })
+			throw error
+			}
+	}
+
+	useEffect(() => {
+		currencyForToday === null && getFetchCurrencyForToday()
+		currencyForToday !== null && getMajorCurrencyRates(currencyForToday)
+	}, [currencyForToday])
+
+	// const getMajorCurrencyRates = createSelector<CurrencyData[] | null, CurrencyData[] | null, string[]>(
+	// 	[currencyForToday],
+	// 	(currency:CurrencyData[]) => {
+	// 		return currency.map(
+	// 			item => {
+	// 				if(item.curAbbreviation === 'USD' ||
+	// 					item.curAbbreviation === 'RUB' ||
+	// 					item.curAbbreviation === 'EUR'
+	// 				) {
+	// 				return(`${item.curScale} BUN ${item.curOfficialRate} ${item.curAbbreviation}`)}
+	// 			}
+	// 		)
+	// 	}
+	// )
+
 	return (
-		<div className='fieldAdditionalFunctions container-block'>
+		<div className='fieldAdditionalFunctions app-container '>
 			{isOpen ? (
 				<div className='flex'>
 					<i className='material-icons up' onClick={changeState}>double_arrow</i>
@@ -18,12 +70,12 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 						<NavigationCard
 							title='Currency'
 							link='/currencyDetails'
-							text={['str1', 'str2', 'str3']}
+							text={currencyForToday !== null ? getMajorCurrencyRates(currencyForToday) : ['']}
 						/>
 						<NavigationCard
-							title='Contacts'
-							link='/currencyDetails'
-							text={['str4', 'str5', 'str6']}
+							title='Birthdays'
+							link='/contactsDetails'
+							text={getBirthdays(contacts)}
 						/>
 						<NavigationCard
 							title='To do list'
@@ -40,7 +92,7 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 							<Link to='/currencyDetails'>Currency</Link>
 						</p>
 						<p>
-							<Link to='/currencyDetails'>Contacts</Link>
+							<Link to='/contactsDetails'>Birthdays</Link>
 						</p>
 						<p>
 							<Link to='/currencyDetails'>To do list</Link>

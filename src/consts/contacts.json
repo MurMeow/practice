@@ -1,0 +1,212 @@
+[
+	{
+		"name": "Max",
+		"email": "max@mail.ru",
+		"phone": "+375291111111",
+		"birthday": "1990-07-10",
+		"address": "Minsk Nemiga 1"
+	},
+	{
+		"name": "Lok",
+		"email": "lok@mail.ru",
+		"phone": "+375291111112",
+		"birthday": "1990-07-15",
+		"address": "Mir Glebki 2"
+	},
+	{
+		"name": "Rim",
+		"email": "rim@gmail.com",
+		"phone": "+375291111113",
+		"birthday": "1990-07-18",
+		"address": "Minsk Uruchie 3"
+	},
+	{
+		"name": "Nud",
+		"email": "nud@mail.ru",
+		"phone": "+375291111114",
+		"birthday": "1990-07-19",
+		"address": "Minsk Nemiga 4"
+	},
+	{
+		"name": "Dim",
+		"email": "dim@mail.ru",
+		"phone": "+375291111115",
+		"birthday": "1985-06-14",
+		"address": "Minsk Nemiga 5"
+	},
+	{
+		"name": "Papa",
+		"email": "papa@mail.ru",
+		"phone": "+375291111116",
+		"birthday": "1960-02-06",
+		"address": "Minsk Nemiga 6"
+	},
+	{
+		"name": "Mama",
+		"email": "mama@mail.ru",
+		"phone": "+375291111117",
+		"birthday": "1970-03-07",
+		"address": "Minsk Nemiga 7"
+	},
+	{
+		"name": "Tim",
+		"email": "tim@uandex.ru",
+		"phone": "+375291111118",
+		"birthday": "1990-09-08",
+		"address": "Gomel Malinina 8"
+	},
+	{
+		"name": "Sister",
+		"email": "sister@uandex.ru",
+		"phone": "+375291111119",
+		"birthday": "2020-07-14",
+		"address": "Gomel Malinina 9"
+	},
+	{
+		"name": "Brother",
+		"email": "brother@uandex.ru",
+		"phone": "+375291111120",
+		"birthday": "1990-07-13",
+		"address": "Gomel Malinina 10"
+	},
+	{
+		"name": "Max2",
+		"email": "max2@mail.ru",
+		"phone": "+375291111121",
+		"birthday": "1990-07-09",
+		"address": "Minsk Nemiga 12"
+	},
+	{
+		"name": "Lok2",
+		"email": "lok2@mail.ru",
+		"phone": "+375291111122",
+		"birthday": "1990-07-08",
+		"address": "Mir Glebki 22"
+	},
+	{
+		"name": "Rim2",
+		"email": "rim2@gmail.com",
+		"phone": "+375291111123",
+		"birthday": "1990-07-11",
+		"address": "Minsk Uruchie 32"
+	},
+	{
+		"name": "Nud2",
+		"email": "nud2@mail.ru",
+		"phone": "+375291111124",
+		"birthday": "1990-07-17",
+		"address": "Minsk Nemiga 42"
+	},
+	{
+		"name": "Dim",
+		"email": "dim@mail.ru",
+		"phone": "+375291111115",
+		"birthday": "1985-01-05",
+		"address": "Minsk Nemiga 5"
+	},
+	{
+		"name": "Papa",
+		"email": "papa@mail.ru",
+		"phone": "+375291111116",
+		"birthday": "1960-02-06",
+		"address": "Minsk Nemiga 6"
+	},
+	{
+		"name": "Mama",
+		"email": "mama@mail.ru",
+		"phone": "+375291111117",
+		"birthday": "1970-03-07",
+		"address": "Minsk Nemiga 7"
+	},
+	{
+		"name": "Tim",
+		"email": "tim@uandex.ru",
+		"phone": "+375291111118",
+		"birthday": "1990-09-08",
+		"address": "Gomel Malinina 8"
+	},
+	{
+		"name": "Sister",
+		"email": "sister@uandex.ru",
+		"phone": "+375291111119",
+		"birthday": "2020-07-14",
+		"address": "Gomel Malinina 9"
+	},
+	{
+		"name": "Brother",
+		"email": "brother@uandex.ru",
+		"phone": "+375291111120",
+		"birthday": "1990-07-13",
+		"address": "Gomel Malinina 10"
+	},
+	{
+		"name": "Max",
+		"email": "max@mail.ru",
+		"phone": "+375291111111",
+		"birthday": "1990-01-01",
+		"address": "Minsk Nemiga 1"
+	},
+	{
+		"name": "Lok",
+		"email": "lok@mail.ru",
+		"phone": "+375291111112",
+		"birthday": "1990-01-02",
+		"address": "Mir Glebki 2"
+	},
+	{
+		"name": "Rim",
+		"email": "rim@gmail.com",
+		"phone": "+375291111113",
+		"birthday": "1990-01-03",
+		"address": "Minsk Uruchie 3"
+	},
+	{
+		"name": "Nud",
+		"email": "nud@mail.ru",
+		"phone": "+375291111114",
+		"birthday": "1990-01-04",
+		"address": "Minsk Nemiga 4"
+	},
+	{
+		"name": "Dim",
+		"email": "dim@mail.ru",
+		"phone": "+375291111115",
+		"birthday": "1985-01-05",
+		"address": "Minsk Nemiga 5"
+	},
+	{
+		"name": "Papa",
+		"email": "papa@mail.ru",
+		"phone": "+375291111116",
+		"birthday": "1960-02-06",
+		"address": "Minsk Nemiga 6"
+	},
+	{
+		"name": "Mama",
+		"email": "mama@mail.ru",
+		"phone": "+375291111117",
+		"birthday": "1970-03-07",
+		"address": "Minsk Nemiga 7"
+	},
+	{
+		"name": "Tim",
+		"email": "tim@uandex.ru",
+		"phone": "+375291111118",
+		"birthday": "1990-09-08",
+		"address": "Gomel Malinina 8"
+	},
+	{
+		"name": "Sister",
+		"email": "sister@uandex.ru",
+		"phone": "+375291111119",
+		"birthday": "2020-07-14",
+		"address": "Gomel Malinina 9"
+	},
+	{
+		"name": "Brother",
+		"email": "brother@uandex.ru",
+		"phone": "+375291111120",
+		"birthday": "1990-07-13",
+		"address": "Gomel Malinina 10"
+	}
+]

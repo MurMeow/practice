@@ -27,9 +27,9 @@ const ButtonDropdownParameters: React.FC<ButtonProps> = ({ value }) => {
 			curID: soughtCurrency.curID,
 			curAbbreviation: soughtCurrency.curAbbreviation,
 		}
-		currencyForToday.forEach((obj) => {
-			if (obj.Cur_Abbreviation === item) {
-				curParam = { curID: obj.Cur_ID, curAbbreviation: obj.Cur_Abbreviation }
+		currencyForToday !== null && currencyForToday.forEach((obj) => {
+			if (obj.curAbbreviation === item) {
+				curParam = { curID: obj.curID, curAbbreviation: obj.curAbbreviation }
 			}
 		})
 		dispatch({
@@ -44,9 +44,9 @@ const ButtonDropdownParameters: React.FC<ButtonProps> = ({ value }) => {
 				{soughtCurrency.curAbbreviation}
 			</DropdownToggle>
 			<DropdownMenu style={{ overflowY: 'scroll', maxHeight: '6.5rem' }}>
-				{value.map((item) => {
+				{value.map((item, index) => {
 					return (
-						<DropdownItem key={item} onClick={() => setCurrency(item)}>
+						<DropdownItem key={index} onClick={() => setCurrency(item)}>
 							{item}
 						</DropdownItem>
 					)

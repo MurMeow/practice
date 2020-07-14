@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import LineChart from '../../components/Chart/Chart'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-import { URLRequestCurrencyHistory, URLRequestCurrencyToday } from '../../consts'
 import { useDispatch, useSelector } from 'react-redux'
+import moment from 'moment'
+import { URLRequestCurrencyHistory, URLRequestCurrencyToday } from '../../consts'
+import LineChart from '../../components/Chart/Chart'
 import './currencyDetails.scss'
 import {
 	CURRENCY_SUCCESS,
@@ -14,11 +15,10 @@ import {
 	CATCH_ERRORS,
 } from '../../store/types'
 import getRequestService from '../../services/getRequestService'
-import moment from 'moment'
 import { Store } from '../../store/interface'
-import { parseDateForChart, parseValueForChart } from './helper'
+import {changeFormatCurrencyHistory, parseDateForChart, parseValueForChart} from './helper'
 import ButtonDropdownParameters from '../../components/app/buttonDropdown/ButtonDropdown'
-import { stringify } from 'querystring'
+import {changeFormatCurrency} from '../../helpers'
 
 let courseValueOnDate: number[]
 let dateForCourse: string[]
@@ -42,31 +42,33 @@ const CurrencyDetails: React.FC = () => {
 	const dispatch = useDispatch()
 	async function getFetchCurrencyHistory(curID: number, startDate: string, endDate: string) {
 		dispatch({ type: PRELOADER_LAUNCH })
-		await getRequestService(
-			`${URLRequestCurrencyHistory}${curID}?startDate=${startDate}&endDate=${endDate}`
-		)
-			.then((result) => {
+		try {
+			const currencyHistory = await getRequestService(
+				`${URLRequestCurrencyHistory}${curID}?startDate=${startDate}&endDate=${endDate}`
+			)
+			dispatch({ type: PRELOADER_STOP })
+			const currencyHistoryNewFormat = changeFormatCurrencyHistory(currencyHistory.data)
+			dispatch({ type: CURRENCY_REQUEST_HISTORY, payload: currencyHistoryNewFormat })
+		}
+		catch(error){
 				dispatch({ type: PRELOADER_STOP })
-				dispatch({ type: CURRENCY_REQUEST_HISTORY, payload: result })
-			})
-			.catch((result) => {
-				dispatch({ type: PRELOADER_STOP })
-				dispatch({ type: CATCH_ERRORS, payload: result })
-			})
-		return
+				dispatch({ type: CATCH_ERRORS, payload: error })
+				throw error
+			}
+
 	}
 	async function getFetchCurrencyForToday() {
 		dispatch({ type: PRELOADER_LAUNCH })
-		await getRequestService(URLRequestCurrencyToday)
-			.then((result) => {
-				dispatch({ type: PRELOADER_STOP })
-				dispatch({ type: CURRENCY_SUCCESS, payload: result.data })
-			})
-			.catch((result) => {
-				dispatch({ type: PRELOADER_STOP })
-				dispatch({ type: CATCH_ERRORS, payload: result })
-			})
-		return
+		try {
+			const currencyForToday = await getRequestService(URLRequestCurrencyToday)
+			dispatch({ type: PRELOADER_STOP })
+			const currencyForTodayNewFormat = changeFormatCurrency(currencyForToday.data)
+			dispatch({ type: CURRENCY_SUCCESS, payload: currencyForTodayNewFormat })
+		} catch (error) {
+			dispatch({ type: PRELOADER_STOP })
+			dispatch({ type: CATCH_ERRORS, payload: error })
+			throw error
+		}
 	}
 	const setDateForFetch = (startDate: string, endDate: string) => {
 		dispatch({
@@ -78,19 +80,25 @@ const CurrencyDetails: React.FC = () => {
 		})
 	}
 
-	useEffect(() => {
-		currencyForToday.length === 0 && getFetchCurrencyForToday()
-		getFetchCurrencyHistory(soughtCurrency.curID, soughtDate.startDate, soughtDate.endDate)
-	}, [soughtCurrency.curID, soughtDate.startDate, soughtDate.endDate])
+	useEffect ( () => {
+		currencyForToday === null && ( async function fetch() {
+			await getFetchCurrencyForToday()
+		})();
+		( async function fetch() {
+			await getFetchCurrencyHistory(soughtCurrency.curID, soughtDate.startDate, soughtDate.endDate)
+		})()
+	}, [currencyForToday, soughtCurrency.curID, soughtDate.startDate, soughtDate.endDate])
 	return (
 		<div className='currencyDetails-block'>
 			<div className='history-block flex'>
 				<div className='detailHistory'>
 					<div className='flex'>
 						<h2>Course history</h2>
+						{currencyForToday!==null &&
 						<ButtonDropdownParameters
-							value={currencyForToday.map((item) => item.Cur_Abbreviation)}
+							value={currencyForToday.map((item) => item.curAbbreviation)}
 						/>
+						}
 					</div>
 					<div className='flex date'>
 						<div className='detailHistory-block'>
@@ -99,10 +107,9 @@ const CurrencyDetails: React.FC = () => {
 								calendarType='US'
 								locale='en-US'
 								onChange={(value) => {
-									const time = 366 * 24 * 60 * 60 * 1000
-									const newDateNumber = Number(new Date(String(value)))
-									const endDateNumber = Number(new Date(String(endDate)))
-									console.log(newDateNumber > endDateNumber - time)
+									// const time = 366 * 24 * 60 * 60 * 1000
+									// const newDateNumber = Number(new Date(String(value)))
+									// const endDateNumber = Number(new Date(String(endDate)))
 									onChangeStartDate(value.toString())
 								}}
 								value={new Date(startDate)}

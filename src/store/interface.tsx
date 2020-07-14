@@ -1,6 +1,7 @@
 export interface Store {
 	CurrencyRequest: CurrencyState
 	GeneralState: GeneralStateInterface
+	Contacts: ContactState
 }
 
 export interface GeneralStateInterface {
@@ -15,25 +16,25 @@ export interface ErrorInterface {
 }
 
 export interface CurrencyState {
-	currencyForToday: CurrencyData[]
+	currencyForToday: CurrencyData[] | null
 	currencyHistory: CurrencyHistory[]
 	soughtCurrency: SoughtCurrency
 	soughtDate: SoughtDate
 }
 
 export interface CurrencyHistory {
-	Cur_ID: number
-	Date: string
-	Cur_OfficialRate: number
+	curID: number
+	date: string
+	curOfficialRate: number
 }
 
 export interface CurrencyData {
-	Cur_ID: number
-	Date: string
-	Cur_Abbreviation: string
-	Cur_Scale: number
-	Cur_Name: string
-	Cur_OfficialRate: number
+	curID: number
+	date: string
+	curAbbreviation: string
+	curScale: number
+	curName: string
+	curOfficialRate: number
 }
 
 export interface SoughtCurrency {
@@ -44,4 +45,16 @@ export interface SoughtCurrency {
 export interface SoughtDate {
 	startDate: string
 	endDate: string
+}
+
+export interface ContactState {
+	contacts: Contact[]
+}
+
+export interface Contact {
+	name: string
+	email?: string
+	phone: string
+	birthday?: string
+	address?: string
 }

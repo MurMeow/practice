@@ -9,7 +9,6 @@ interface NavigationCardProps {
 }
 
 const NavigationCard: React.FC<NavigationCardProps> = ({ title = '', text = [''], link = '' }) => {
-	console.log(typeof text)
 	return (
 		<div className='box navigationCard'>
 			<h5>{title}</h5>

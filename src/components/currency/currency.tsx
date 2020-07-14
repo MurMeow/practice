@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import './Currency.scss'
-import { Store } from '../../store/interface'
-import getRequestService from '../../services/getRequestService'
-import { CATCH_ERRORS, CURRENCY_SUCCESS, PRELOADER_LAUNCH, PRELOADER_STOP } from '../../store/types'
 import { Link } from 'react-router-dom'
+import './Currency.scss'
 import { URLRequestCurrencyToday } from '../../consts'
+import { Store } from '../../store/interface'
+import { CATCH_ERRORS, CURRENCY_SUCCESS, PRELOADER_LAUNCH, PRELOADER_STOP } from '../../store/types'
+import getRequestService from '../../services/getRequestService'
+
+
 
 const CurrenciesBlock: React.FC = () => {
 	const { currencyForToday } = useSelector((store: Store) => ({
@@ -28,29 +30,24 @@ const CurrenciesBlock: React.FC = () => {
 	}
 
 	useEffect(() => {
-		currencyForToday !== [] && currencyForToday !== undefined && setOpen(true)
-		!isOpen && currencyForToday.length === 0 && getFetchCurrencyForToday()
+		currencyForToday !== null && setOpen(true)
+		!isOpen && currencyForToday === null && getFetchCurrencyForToday()
 	}, [])
 
 	return isOpen ? (
 		<div className='box currency-container'>
 			<h5>Currency</h5>
-			{currencyForToday !== [] &&
-				currencyForToday !== undefined &&
+			{	currencyForToday !== null &&
 				currencyForToday.map((item) => {
-					if (
-						item.Cur_Abbreviation === 'USD' ||
-						item.Cur_Abbreviation === 'RUB' ||
-						item.Cur_Abbreviation === 'EUR'
-					) {
-						return (
-							<div key={item.Cur_ID} className='currency-row flex'>
-								<p className='currency-scale'>{`${item.Cur_Scale} BUN `}</p>
-								<p className='currency-rate'>{` ${item.Cur_OfficialRate} ${item.Cur_Abbreviation}`}</p>
-							</div>
-						)
-					}
-					return <div></div>
+					return (
+						item.curAbbreviation === 'USD' ||
+						item.curAbbreviation === 'RUB' ||
+						item.curAbbreviation === 'EUR') && (
+						<div key={item.curID} className='currency-row flex'>
+							<p className='currency-scale'>{`${item.curScale} BUN `}</p>
+							<p className='currency-rate'>{` ${item.curOfficialRate} ${item.curAbbreviation}`}</p>
+						</div>
+					)
 				})}
 			<p className='currency-details'>
 				<Link to={'/currencyDetails'}>Details</Link>
@@ -61,16 +58,4 @@ const CurrenciesBlock: React.FC = () => {
 	)
 }
 
-// const mapStateToProps = (store: Store) => {
-// 	// const isLoading = store.isLoading
-// 	// const error = store.error
-// 	// const currency = store.currency
-// 	return { isLoading: store.isLoading, error: store.error, currency: store.currency }
-// }
-//
-// const mapDispatchToProps = () => {
-// 	return
-// }
-//
-// export default connect(mapStateToProps, { mapDispatchToProps })(Currency)
 export default CurrenciesBlock

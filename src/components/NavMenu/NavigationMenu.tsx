@@ -4,7 +4,7 @@ import './NavigationMenu.scss'
 
 const NavMenu: React.FC = () => {
 	return (
-		<div className='navMenu container-block'>
+		<div className='app-container navMenu'>
 			<header>
 				<Link to={'/'}>
 					<h2>MyApp</h2>

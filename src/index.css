@@ -19,15 +19,18 @@ code {
     width: 100%;
 }
 
-.container-block {
-    box-sizing: border-box;
-    padding: 1rem;
-    margin: 1rem 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0, .2);
+.app-container {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0, .2);
 }
 
+.app-box {
+  border: 1px solid #848484;
+}
 
 .box {
     box-sizing: border-box;
@@ -47,13 +50,13 @@ code {
 
 /*!*smartphone*!*/
 /*@media screen and (max-width: 320px) {*/
-/*    .container-block {*/
+/*    .app-container  {*/
 /*        padding: 0.5rem;*/
 /*    }*/
 /*}*/
 /*!*tablet*!*/
 /*@media screen and (max-width: 740px) and (min-width: 321px) {*/
-/*    .container-block {*/
+/*    .app-container  {*/
 /*        padding: 0.5rem;*/
 /*    }*/
 /*}*/

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import './Home.scss'
-import CurrenciesBlock from '../../components/currency/currency'
+import './home.scss'
 import FieldAdditionalFunctions from '../../components/fieldAdditionalFunctions/FieldAdditionalFunctions'
 
 const Home: React.FC = () => {
@@ -13,7 +12,6 @@ const Home: React.FC = () => {
 	return (
 		<div>
 			<FieldAdditionalFunctions isOpen={isOpenFieldAdditionalFunctions} changeState={changeStateFieldAdditionalFunctions}/>
-			<CurrenciesBlock />
 		</div>
 	)
 }

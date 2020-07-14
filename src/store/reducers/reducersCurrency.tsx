@@ -8,7 +8,7 @@ import { CurrencyState } from '../interface'
 import moment from 'moment'
 
 const initialState: CurrencyState = {
-	currencyForToday: [],
+	currencyForToday: null,
 	currencyHistory: [],
 	soughtCurrency: {
 		curID: 145,
@@ -33,7 +33,7 @@ export function CurrencyRequest(state = initialState, action: any) {
 		case CURRENCY_REQUEST_HISTORY: {
 			const newState: CurrencyState = {
 				...state,
-				currencyHistory: action.payload.data,
+				currencyHistory: action.payload,
 			}
 			return newState
 		}
