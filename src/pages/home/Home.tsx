@@ -3,15 +3,15 @@ import './home.scss'
 import FieldAdditionalFunctions from '../../components/fieldAdditionalFunctions/FieldAdditionalFunctions'
 
 const Home: React.FC = () => {
-	const [isOpenFieldAdditionalFunctions, setStateFieldAdditionalFunctions] = useState(false)
-
-	const changeStateFieldAdditionalFunctions = () => {
-		setStateFieldAdditionalFunctions(!isOpenFieldAdditionalFunctions)
-	}
+	// const [isOpenFieldAdditionalFunctions, setStateFieldAdditionalFunctions] = useState(false)
+	//
+	// const changeStateFieldAdditionalFunctions = () => {
+	// 	setStateFieldAdditionalFunctions(!isOpenFieldAdditionalFunctions)
+	// }
 
 	return (
 		<div>
-			<FieldAdditionalFunctions isOpen={isOpenFieldAdditionalFunctions} changeState={changeStateFieldAdditionalFunctions}/>
+			{/*<FieldAdditionalFunctions isOpen={isOpenFieldAdditionalFunctions} changeState={changeStateFieldAdditionalFunctions}/>*/}
 		</div>
 	)
 }

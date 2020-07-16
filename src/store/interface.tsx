@@ -2,6 +2,7 @@ export interface Store {
 	CurrencyRequest: CurrencyState
 	GeneralState: GeneralStateInterface
 	Contacts: ContactState
+	TodoList: TodoListState
 }
 
 export interface GeneralStateInterface {
@@ -57,4 +58,15 @@ export interface Contact {
 	phone: string
 	birthday?: string
 	address?: string
+}
+
+export interface TodoListState {
+	todoList: Todo[]
+}
+
+export interface Todo {
+	todo: string
+	date?: string
+	isActiveStatus?: boolean
+	id: string
 }

@@ -46,20 +46,6 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 		currencyForToday !== null && getMajorCurrencyRates(currencyForToday)
 	}, [currencyForToday])
 
-	// const getMajorCurrencyRates = createSelector<CurrencyData[] | null, CurrencyData[] | null, string[]>(
-	// 	[currencyForToday],
-	// 	(currency:CurrencyData[]) => {
-	// 		return currency.map(
-	// 			item => {
-	// 				if(item.curAbbreviation === 'USD' ||
-	// 					item.curAbbreviation === 'RUB' ||
-	// 					item.curAbbreviation === 'EUR'
-	// 				) {
-	// 				return(`${item.curScale} BUN ${item.curOfficialRate} ${item.curAbbreviation}`)}
-	// 			}
-	// 		)
-	// 	}
-	// )
 
 	return (
 		<div className='fieldAdditionalFunctions app-container '>
@@ -79,7 +65,7 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 						/>
 						<NavigationCard
 							title='To do list'
-							link='/currencyDetails'
+							link='/todoList'
 							text={['str7', 'str8', 'str9']}
 						/>
 					</div>
@@ -87,17 +73,17 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 			) : (
 				<div className='flex'>
 					<i className='material-icons down' onClick={changeState}>double_arrow</i>
-					<div className='flex boxAdditionalFunctions'>
-						<p>
+					<ul className='flex boxAdditionalFunctions'>
+						<li>
 							<Link to='/currencyDetails'>Currency</Link>
-						</p>
-						<p>
+						</li>
+						<li>
 							<Link to='/contactsDetails'>Birthdays</Link>
-						</p>
-						<p>
-							<Link to='/currencyDetails'>To do list</Link>
-						</p>
-					</div>
+						</li>
+						<li>
+							<Link to='/todoList'>To do list</Link>
+						</li>
+					</ul>
 				</div>
 			)}
 		</div>
