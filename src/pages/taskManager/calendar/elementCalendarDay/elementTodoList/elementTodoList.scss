@@ -1,0 +1,28 @@
+.element-todo-list {
+  .element-todo-list__check-icon {
+    justify-content: space-between;
+    .checked {
+      display: none;
+    }
+    &:hover {
+      .checked {
+        display: block;
+      }
+      .unchecked {
+        display: none;
+      }
+    }
+  }
+  .element-todo-list__check-icon, .element-todo-list__clear-icon {
+    width: 2em;
+    height: 1.5em;
+    cursor: pointer;
+  }
+  .element-todo-list__clear-icon {
+    width: 1em;
+  }
+  p {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
