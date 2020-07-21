@@ -1,0 +1,86 @@
+.contact-form-reduced {
+  i {
+    cursor: pointer;
+  }
+  form {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    .block-for-input-icon {
+      &>label {
+        display: flex;
+        .button-for-new-contact {
+          display: none;
+        }
+      }
+      &>label>input {
+        display: none;
+      }
+      &>label>i {
+        position: relative;
+      }
+    }
+    .block-for-input.name {
+      display: flex;
+      width: 5rem;
+      max-width: fit-content;
+      input {
+        width: inherit;
+      }
+    }
+    input {
+      margin: 0 0.5rem 0 0;
+      padding: 0 0.3rem;
+      height: fit-content;
+      width: fit-content;
+    }
+  }
+//click phone
+  .switcher-input-phone:checked~form .block-for-input-icon label.label-for-open-input-phone input,
+  .switcher-input-phone:checked~form .block-for-input-icon>label.label-for-open-input-phone .button-for-new-contact {
+    display: block;
+  }
+  .switcher-input-phone:checked~form .block-for-input-icon>label.label-for-open-input-phone>i,
+  .switcher-input-phone:checked~form .block-for-input-icon>label.label-for-open-input-email,
+  .switcher-input-phone:checked~form .block-for-input-icon>label.label-for-open-input-birthday,
+  .switcher-input-phone:checked~form .block-for-input-icon>label.label-for-open-input-address{
+    display: none;
+  }
+
+//click email
+  .switcher-input-email:checked~form .block-for-input-icon .label-for-open-input-email input[placeholder='email'],
+  .switcher-input-email:checked~form .block-for-input-icon .label-for-open-input-email .button-for-new-contact {
+    display: block;
+  }
+  .switcher-input-email:checked~form .block-for-input-icon label.label-for-open-input-phone,
+  .switcher-input-email:checked~form .block-for-input-icon label.label-for-open-input-email i.email,
+  .switcher-input-email:checked~form .block-for-input-icon label.label-for-open-input-birthday,
+  .switcher-input-email:checked~form .block-for-input-icon label.label-for-open-input-address{
+    display: none;
+  }
+
+//click birthday
+  .switcher-input-birthday:checked~form .block-for-input-icon .label-for-open-input-birthday>input[placeholder='birthday'],
+  .switcher-input-birthday:checked~form .block-for-input-icon .label-for-open-input-birthday .button-for-new-contact {
+    display: block;
+  }
+  .switcher-input-birthday:checked~form .block-for-input-icon label.label-for-open-input-phone,
+  .switcher-input-birthday:checked~form .block-for-input-icon label.label-for-open-input-email,
+  .switcher-input-birthday:checked~form .block-for-input-icon label.label-for-open-input-birthday i.birthday,
+  .switcher-input-birthday:checked~form .block-for-input-icon label.label-for-open-input-address{
+    display: none;
+  }
+
+//click address
+  .switcher-input-address:checked~form .block-for-input-icon .label-for-open-input-address>input[placeholder='address'],,
+  .switcher-input-address:checked~form .block-for-input-icon .label-for-open-input-address .button-for-new-contact {
+    display: block;
+  }
+  .switcher-input-address:checked~form .block-for-input-icon>label.label-for-open-input-phone,
+  .switcher-input-address:checked~form .block-for-input-icon>label.label-for-open-input-email,
+  .switcher-input-address:checked~form .block-for-input-icon>label.label-for-open-input-birthday,
+  .switcher-input-address:checked~form .block-for-input-icon>label.label-for-open-input-address i.address{
+    display: none;
+  }
+
+}

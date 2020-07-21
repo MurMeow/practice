@@ -1,0 +1,26 @@
+[
+	{
+		"todo":	"buy products",
+		"date": "2020-07-10",
+		"isActiveStatus": true,
+		"id": "1000"
+	},
+	{
+		"todo":	"pay utility bills",
+		"date": "2020-07-24",
+		"isActiveStatus": true,
+		"id": "1001"
+	},
+	{
+		"todo":	"schedule a visit to the doctor",
+		"date": "2020-07-16",
+		"isActiveStatus": true,
+		"id": "1002"
+	},
+	{
+		"todo":	"buy dish washing detergent",
+		"date": "2020-07-20",
+		"isActiveStatus": false,
+		"id": "1003"
+	}
+]
