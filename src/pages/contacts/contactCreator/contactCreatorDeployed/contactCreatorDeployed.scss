@@ -1,0 +1,37 @@
+.contact-form {
+  text-align: center;
+  input[type='checkbox'] {
+    display: none;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: fit-content;
+    margin: 0 auto;
+    .block-for-input-icon {
+      position: relative;
+      i.input-icon {
+        width: 1em;
+        position: absolute;
+        top: 0.10em;
+        left: 0.25em;
+        margin: 0.5rem 0;
+      }
+      input {
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 0 0.3rem 0 2em;
+      }
+    }
+    input[type='button'] {
+      padding: 0 0.3rem;
+      width: 100%;
+      margin: 0.5rem 0;
+      background-color: #717070;
+      color: white;
+      font-weight: bold;
+      border: 1px solid;
+    }
+  }
+}
