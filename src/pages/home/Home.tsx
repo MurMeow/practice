@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './home.scss'
-import FieldAdditionalFunctions from '../../layout/header/fieldAdditionalFunctions/FieldAdditionalFunctions'
+import FieldAdditionalFunctions from '../../components/fieldAdditionalFunctions/FieldAdditionalFunctions'
 
 const Home: React.FC = () => {
 	// const [isOpenFieldAdditionalFunctions, setStateFieldAdditionalFunctions] = useState(false)

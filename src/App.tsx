@@ -1,18 +1,15 @@
 import React from 'react'
+import NavMenu from './components/NavMenu/NavigationMenu'
+import CommonLayout from './layout/CommonLayout'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
-import CommonLayout from './layout/CommonLayout'
-import Header from './layout/header/Header'
-import Footer from './layout/footer/Footer'
-
 
 const App: React.FunctionComponent = () => {
 	return (
 		<BrowserRouter>
-			<div className='App wrapper'>
-				<Header />
+			<div className='App'>
+				<NavMenu />
 				<CommonLayout />
-				<Footer />
 			</div>
 		</BrowserRouter>
 	)

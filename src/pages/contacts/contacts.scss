@@ -1,18 +1,8 @@
 .contacts {
   .contacts--birthdays-box {
     margin-right: 1rem;
-    text-align: center;
-    p {
-      margin-bottom: 0;
-    }
-    .birthdays {
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
   }
   .contacts--contacts-box {
-    margin-right: 1rem;
     .contacts-box__search {
       align-items: center;
       justify-content: space-between;
