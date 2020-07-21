@@ -4,7 +4,7 @@ import 'react-calendar/dist/Calendar.css'
 import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
 import { URLRequestCurrencyHistory, URLRequestCurrencyToday } from '../../consts'
-import LineChart from './Chart/Chart'
+import LineChart from '../../components/Chart/Chart'
 import './currencyDetails.scss'
 import {
 	CURRENCY_SUCCESS,
@@ -17,7 +17,7 @@ import {
 import getRequestService from '../../services/getRequestService'
 import { Store } from '../../store/interface'
 import {changeFormatCurrencyHistory, parseDateForChart, parseValueForChart} from './helper'
-import ButtonDropdownParameters from '../../components/buttonDropdown/ButtonDropdown'
+import ButtonDropdownParameters from '../../components/app/buttonDropdown/ButtonDropdown'
 import {changeFormatCurrency} from '../../helpers'
 
 let courseValueOnDate: number[]

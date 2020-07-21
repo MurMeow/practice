@@ -1,0 +1,19 @@
+.currency-container {
+  width: 210px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .currency-row {
+    justify-content: space-between;
+    .currency-scale {
+      width: 5rem;
+    }
+    .currency-rate {
+      width: 6rem;
+    }
+  }
+  .currency-details {
+    text-align: end;
+  }
+}
