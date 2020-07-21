@@ -11,7 +11,7 @@ export function Contacts(state = initialState, action: any) {
 		case CREATE_NEW_CONTACT: {
 			const newState: ContactState = {
 				...state,
-				contacts: [...action.payload],
+				contacts: [...state.contacts, action.payload],
 			}
 			return newState
 		}

@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux'
 import './contacts.scss'
 import { sortContactsByRequest, sortContactsByNearestBirthday } from './helper'
 import { Contact, Store } from '../../store/interface'
-import Search from '../../components/app/search/search'
-import ContactsTable from '../../components/contactsTable/ContactsTable'
-import ContactCard from '../../components/contactCard/ContactCard'
+import Search from '../../components/search/search'
+import ContactsTable from './contactsTable/ContactsTable'
+import ContactCard from './contactCard/ContactCard'
+import ContactCreatorDeployed from './contactCreator/contactCreatorDeployed/ContactCreatorDeployed'
 
 
 const Contacts: React.FC = () => {
@@ -42,13 +43,6 @@ const Contacts: React.FC = () => {
 	return (
 		<div className='contacts flex'>
 
-			<div className='app-container contacts--birthdays-box '>
-				<h4>Birthdays</h4>
-				<div className='flex birthdays'>
-					{cardsDisplayElement}
-				</div>
-			</div>
-
 			<div className='app-container contacts--contacts-box '>
 				<div className='flex contacts-box__search'>
 					<h4>Contacts</h4>
@@ -56,6 +50,17 @@ const Contacts: React.FC = () => {
 				</div>
 				<ContactsTable contacts={contactsMatchingSearch}/>
 				{isError && <div>Error: Your search returned no results.</div>}
+			</div>
+
+			<div className=' contacts--birthdays-box '>
+				<div className='app-container'>
+					<ContactCreatorDeployed />
+				</div>
+				<div className='app-container'><h4>Birthdays</h4>
+					<div className='flex birthdays'>
+						{cardsDisplayElement}
+					</div>
+				</div>
 			</div>
 
 		</div>

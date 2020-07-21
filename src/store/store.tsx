@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import { CurrencyRequest } from './reducers/reducersCurrency'
 import { GeneralState } from './reducers/reducersGeneralState'
 import { Contacts } from './reducers/reducersContacts'
-import { TodoList } from './reducers/reducersTodoList'
+import { TodoList } from './reducers/reducersTaskManager'
 
 const reducers = combineReducers({
 	CurrencyRequest,
