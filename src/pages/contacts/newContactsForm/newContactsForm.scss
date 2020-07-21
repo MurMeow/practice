@@ -1,0 +1,88 @@
+//.contact-form.expanded {
+//  text-align: center;
+//  input[type='checkbox'] {
+//    display: none;
+//  }
+//  form {
+//    display: flex;
+//    flex-direction: column;
+//    min-width: 15rem;
+//    max-width: fit-content;
+//    margin: 0 auto;
+//    .container-for-icons {
+//      display: none;
+//    }
+//    .block-for-input-icon {
+//      position: relative;
+//      i.input-icon {
+//        width: 1em;
+//        position: absolute;
+//        top: 0.10em;
+//        left: 0.25em;
+//        margin: 0.5rem 0;
+//      }
+//      input {
+//        width: 100%;
+//        margin: 0.5rem 0;
+//        padding: 0 0.3rem 0 2em;
+//      }
+//    }
+//    input[type='button'] {
+//      padding: 0 0.3rem;
+//      width: 100%;
+//      margin: 0.5rem 0;
+//      background-color: #717070;
+//      color: white;
+//      font-weight: bold;
+//      border: 1px solid;
+//    }
+//    i.button-for-new-contact {
+//      display: none;
+//    }
+//  }
+//}
+//
+//.contact-form.compressed {
+//  .contact-form__title-form {
+//    display: none;
+//  }
+//  i {
+//    display: block;
+//    cursor: pointer;
+//  }
+//
+//  .switcher-input-phone:checked~div.block-for-input-icon.phone~input[placeholder='phone'],
+//  .switcher-input-phone:checked~.button-for-new-contact{
+//    display: block;
+//  }
+//  .switcher-input-phone:checked~.container-for-icons {
+//    display: none;
+//  }
+//
+//  form {
+//    display: flex;
+//    max-width: fit-content;
+//    .block-for-input-icon,
+//    input[type='button'],
+//    .button-for-new-contact {
+//      display: none;
+//    }
+//
+//
+//    .block-for-input-icon.name {
+//      display: flex;
+//      width: 5rem;
+//      max-width: fit-content;
+//      i {
+//        display: none;
+//      }
+//      input {
+//        width: inherit;
+//      }
+//    }
+//    input {
+//      margin: 0 0.5rem 0 0;
+//      padding: 0 0.3rem;
+//    }
+//  }
+//}
