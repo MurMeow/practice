@@ -1,6 +1,8 @@
 import React from 'react'
-import './navigationCard.scss'
 import { Link } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+import './navigationCard.scss'
+
 
 interface NavigationCardProps {
 	title: string
@@ -13,8 +15,8 @@ const NavigationCard: React.FC<NavigationCardProps> = ({ title = '', text = ['']
 		<div className='box navigationCard'>
 			<h5>{title}</h5>
 			{text !== [''] &&
-				text.map((item, index) => {
-					return <p key={index}>{item}</p>
+				text.map((item) => {
+					return <p key={uuidv4()}>{item}</p>
 				})}
 			<p className='details'>
 				<Link to={link}>Details</Link>

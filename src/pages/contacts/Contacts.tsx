@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid'
 import './contacts.scss'
 import { sortContactsByRequest, sortContactsByNearestBirthday } from './helper'
 import { Contact, Store } from '../../store/interface'
@@ -7,6 +8,7 @@ import Search from '../../components/search/search'
 import ContactsTable from './contactsTable/ContactsTable'
 import ContactCard from './contactCard/ContactCard'
 import ContactCreatorDeployed from './contactCreator/contactCreatorDeployed/ContactCreatorDeployed'
+
 
 
 const Contacts: React.FC = () => {
@@ -28,9 +30,10 @@ const Contacts: React.FC = () => {
 		sortedContactsMatchingSearch.length === 0 ? setErrorState(true) : setErrorState(false)
 
 		const peopleWhoHaveBirthdaySoon = sortContactsByNearestBirthday(contacts)
-		setCardsDisplayElement(peopleWhoHaveBirthdaySoon.map( (item, index) => {
+		setCardsDisplayElement(peopleWhoHaveBirthdaySoon.map( (item) => {
+			const externalId = uuidv4()
 			return (
-				<ContactCard key={index}
+				<ContactCard key={externalId}
 										 name={item.name}
 										 phone={item.phone}
 										 address={item.address}

@@ -16,7 +16,6 @@ export const sortContactsByNearestBirthday = (contacts:Contact[]):Contact[] => {
 }
 
 export const calculateAge = (birthday:string | undefined) => {
-	console.log(moment().diff(birthday, 'years', false))
 	return moment().diff(birthday, 'years', false)
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid'
 import { Store } from '../../store/interface'
 import { CURRENCY_HISTORY_SET_CURRENCY } from '../../store/types'
 
@@ -44,9 +45,10 @@ const ButtonDropdownParameters: React.FC<ButtonProps> = ({ value }) => {
 				{soughtCurrency.curAbbreviation}
 			</DropdownToggle>
 			<DropdownMenu style={{ overflowY: 'scroll', maxHeight: '6.5rem' }}>
-				{value.map((item, index) => {
+				{value.map((item) => {
+					const externalId = uuidv4()
 					return (
-						<DropdownItem key={index} onClick={() => setCurrency(item)}>
+						<DropdownItem key={externalId} onClick={() => setCurrency(item)}>
 							{item}
 						</DropdownItem>
 					)

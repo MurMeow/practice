@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import moment from 'moment'
+import { v4 as uuidv4 } from 'uuid'
 import './calendar.scss'
 import { setDateForWeekDay, WeekWithDate } from './helper'
 import ElementCalendarDay from './elementCalendarDay/ElementCalendarDay'
@@ -27,9 +28,10 @@ const Calendar: React.FC = () => {
 	return (
 		<div className='todo-list flex'>
 			<i className='material-icons' onClick={() => showPreviousWeek()}>arrow_back_ios</i>
-			{weekWithDate?.map( (item,index) => {
+			{weekWithDate?.map( (item) => {
+				const externalId = uuidv4()
 				return (
-					<div key={index} className='box calendar-day'>
+					<div key={externalId} className='box calendar-day'>
 						<h5>{item.date}</h5>
 						<p>{item.weekday}</p>
 						<ElementCalendarDay date={item.date}/>

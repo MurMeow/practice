@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid'
 import './elementCalendarDay.scss'
 import ElementTodoList from './elementTodoList/ElementTodoList'
 import { Store, Todo } from '../../../../store/interface'
@@ -24,13 +25,15 @@ const ElementCalendarDay: React.FC<ElementCalendarDayProps> = ({date}) => {
 	return (
 		<div>
 			{
-				tasksForToday?.map( (item, index) => {
-					return item.isActiveStatus && <ElementTodoList key={index} task={item}/>
+				tasksForToday?.map( (item) => {
+					const externalId = uuidv4()
+					return item.isActiveStatus && <ElementTodoList key={externalId} task={item}/>
 				})
 			}
 			{
-				tasksForToday?.map( (item, index) => {
-					return item.isActiveStatus===false && <ElementTodoList key={index} task={item}/>
+				tasksForToday?.map( (item) => {
+					const externalId = uuidv4()
+					return item.isActiveStatus===false && <ElementTodoList key={externalId} task={item}/>
 				})
 			}
 
