@@ -28,11 +28,12 @@ const ButtonDropdownParameters: React.FC<ButtonProps> = ({ value }) => {
 			curID: soughtCurrency.curID,
 			curAbbreviation: soughtCurrency.curAbbreviation,
 		}
-		currencyForToday !== null && currencyForToday.forEach((obj) => {
-			if (obj.curAbbreviation === item) {
-				curParam = { curID: obj.curID, curAbbreviation: obj.curAbbreviation }
-			}
-		})
+		currencyForToday !== null &&
+			currencyForToday.forEach((obj) => {
+				if (obj.curAbbreviation === item) {
+					curParam = { curID: obj.curID, curAbbreviation: obj.curAbbreviation }
+				}
+			})
 		dispatch({
 			type: CURRENCY_HISTORY_SET_CURRENCY,
 			payload: curParam,

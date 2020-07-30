@@ -23,6 +23,10 @@ const ErrorBlock: React.FC = () => {
 		onChangeIsOpen(false)
 	}
 
+	const onClickButtonHandler = () => {
+		closeCardError()
+	}
+
 	useEffect(() => {
 		error.name !== '' ? onChangeIsOpen(true) : onChangeIsOpen(false)
 	}, [error])
@@ -36,7 +40,7 @@ const ErrorBlock: React.FC = () => {
 					<p>{error.message}</p>
 					<p>{error.stack}</p>
 				</div>
-				<div className='button' onClick={() => closeCardError()}>
+				<div className='button' onClick={onClickButtonHandler}>
 					<button>Close</button>
 				</div>
 			</div>

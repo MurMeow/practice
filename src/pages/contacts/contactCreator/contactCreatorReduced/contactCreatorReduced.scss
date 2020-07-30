@@ -60,7 +60,7 @@
   }
 
 //click birthday
-  .switcher-input-birthday:checked~form .block-for-input-icon .label-for-open-input-birthday>input[placeholder='birthday'],
+  .switcher-input-birthday:checked~form .block-for-input-icon .label-for-open-input-birthday>input[placeholder='birthday YYYY-MM-DD'],
   .switcher-input-birthday:checked~form .block-for-input-icon .label-for-open-input-birthday .button-for-new-contact {
     display: block;
   }

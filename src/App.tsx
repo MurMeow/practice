@@ -5,7 +5,6 @@ import CommonLayout from './layout/CommonLayout'
 import Header from './layout/header/Header'
 import Footer from './layout/footer/Footer'
 
-
 const App: React.FunctionComponent = () => {
 	return (
 		<BrowserRouter>

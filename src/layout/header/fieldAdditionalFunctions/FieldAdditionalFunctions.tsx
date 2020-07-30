@@ -2,22 +2,28 @@ import React, { useEffect, Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './fieldAdditionalFunctions.scss'
-import {getBirthdays, getMajorCurrencyRates, getTasksForToday} from './helper'
+import { getBirthdays, getMajorCurrencyRates, getTasksForToday } from './helper'
 import { changeFormatCurrency } from '../../../helpers'
 import { URLRequestCurrencyToday } from '../../../consts'
 import { Store } from '../../../store/interface'
-import { CATCH_ERRORS, CURRENCY_SUCCESS, PRELOADER_LAUNCH, PRELOADER_STOP } from '../../../store/types'
+import {
+	CATCH_ERRORS,
+	CURRENCY_SUCCESS,
+	PRELOADER_LAUNCH,
+	PRELOADER_STOP,
+} from '../../../store/types'
 import NavigationCard from './navigationCard/NavigationCard'
 import getRequestService from '../../../services/getRequestService'
-
 
 interface FieldAdditionalFunctionsProps {
 	isOpen: boolean
 	changeState: () => void
 }
 
-const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isOpen = false, changeState }) => {
-
+const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({
+	isOpen = false,
+	changeState,
+}) => {
 	const { currencyForToday } = useSelector((store: Store) => ({
 		currencyForToday: store.CurrencyRequest.currencyForToday,
 	}))
@@ -38,10 +44,10 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 			const currencyForTodayNewFormat = changeFormatCurrency(currencyForToday.data)
 			dispatch({ type: CURRENCY_SUCCESS, payload: currencyForTodayNewFormat })
 		} catch (error) {
-				dispatch({ type: PRELOADER_STOP })
-				dispatch({ type: CATCH_ERRORS, payload: error })
+			dispatch({ type: PRELOADER_STOP })
+			dispatch({ type: CATCH_ERRORS, payload: error })
 			throw error
-			}
+		}
 	}
 
 	useEffect(() => {
@@ -49,12 +55,13 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 		currencyForToday !== null && getMajorCurrencyRates(currencyForToday)
 	}, [currencyForToday])
 
-
 	return (
 		<div className='fieldAdditionalFunctions flex'>
 			{isOpen ? (
 				<Fragment>
-					<i className='material-icons up' onClick={changeState}>double_arrow</i>
+					<i className='material-icons up' onClick={changeState}>
+						double_arrow
+					</i>
 					<div className='flex boxAdditionalFunctions'>
 						<NavigationCard
 							title='Currency'
@@ -66,16 +73,14 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 							link='/contactsDetails'
 							text={getBirthdays(contacts)}
 						/>
-						<NavigationCard
-							title='To do list'
-							link='/todoList'
-							text={getTasksForToday(todoList)}
-						/>
+						<NavigationCard title='To do list' link='/todoList' text={getTasksForToday(todoList)} />
 					</div>
 				</Fragment>
 			) : (
-			<Fragment>
-					<i className='material-icons down' onClick={changeState}>double_arrow</i>
+				<Fragment>
+					<i className='material-icons down' onClick={changeState}>
+						double_arrow
+					</i>
 					<ul className='flex boxAdditionalFunctions'>
 						<li>
 							<Link to='/currencyDetails'>Currency</Link>
@@ -87,7 +92,7 @@ const FieldAdditionalFunctions: React.FC<FieldAdditionalFunctionsProps> = ({ isO
 							<Link to='/todoList'>To do list</Link>
 						</li>
 					</ul>
-			</Fragment>
+				</Fragment>
 			)}
 		</div>
 	)

@@ -3,42 +3,42 @@
 		"name": "Max",
 		"email": "max@mail.ru",
 		"phone": "+375291111111",
-		"birthday": "1990-07-16",
+		"birthday": "1990-07-26",
 		"address": "Minsk Nemiga 1"
 	},
 	{
 		"name": "Lok",
 		"email": "lok@mail.ru",
 		"phone": "+375291111112",
-		"birthday": "1990-07-15",
+		"birthday": "1990-07-25",
 		"address": "Mir Glebki 2"
 	},
 	{
 		"name": "Rim",
 		"email": "rim@gmail.com",
 		"phone": "+375291111113",
-		"birthday": "1990-07-18",
+		"birthday": "1990-07-28",
 		"address": "Minsk Uruchie 3"
 	},
 	{
 		"name": "Nud",
 		"email": "nud@mail.ru",
 		"phone": "+375291111114",
-		"birthday": "1990-07-19",
+		"birthday": "1990-07-29",
 		"address": "Minsk Nemiga 4"
 	},
 	{
 		"name": "Dim",
 		"email": "dim@mail.ru",
 		"phone": "+375291111115",
-		"birthday": "1985-06-14",
+		"birthday": "1985-06-24",
 		"address": "Minsk Nemiga 5"
 	},
 	{
 		"name": "Papa",
 		"email": "papa@mail.ru",
 		"phone": "+375291111116",
-		"birthday": "1960-02-06",
+		"birthday": "1960-02-26",
 		"address": "Minsk Nemiga 6"
 	},
 	{
@@ -101,7 +101,7 @@
 		"name": "Dim",
 		"email": "dim@mail.ru",
 		"phone": "+375291111115",
-		"birthday": "1985-01-05",
+		"birthday": "1985-01-20",
 		"address": "Minsk Nemiga 5"
 	},
 	{

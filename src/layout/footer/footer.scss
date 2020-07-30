@@ -22,7 +22,9 @@
     .compressed, .label-for-close-tasks-creator {
       display: none;
     }
-    .switcher-tasks-creator:checked ~ .compressed,
+    .switcher-tasks-creator:checked ~ .compressed {
+      display: flex;
+    }
     .switcher-tasks-creator:checked ~ .label-for-close-tasks-creator {
       display: block;
     }
