@@ -5,18 +5,17 @@ import NewTaskForm from '../../pages/taskManager/newTaskForm/NewTaskForm'
 import ContactCreatorReduced from '../../pages/contacts/contactCreator/contactCreatorReduced/ContactCreatorReduced'
 
 const Footer: React.FC = () => {
-
 	return (
 		<footer className='app-container flex footer'>
 			<div className='tasks-creator flex'>
 				<input className='switcher-tasks-creator' type='checkbox' id='tasksCreator' />
-				<NewTaskForm specialClass='compressed'/>
+				<NewTaskForm specialClass='compressed' />
 				<label className='label-for-open-tasks-creator flex' htmlFor='tasksCreator'>
 					<p>Create new task</p>
 					<i className='material-icons'>control_pointer</i>
 				</label>
-				<label  className='label-for-close-tasks-creator' htmlFor='tasksCreator'>
-					<i className="material-icons element-todo-list__clear-icon">clear</i>
+				<label className='label-for-close-tasks-creator' htmlFor='tasksCreator'>
+					<i className='material-icons element-todo-list__clear-icon'>clear</i>
 				</label>
 			</div>
 
@@ -27,11 +26,10 @@ const Footer: React.FC = () => {
 					<p>Create new contact</p>
 					<i className='material-icons'>control_pointer</i>
 				</label>
-				<label  className='label-for-close-contact-creator' htmlFor='contactCreator'>
-					<i className="material-icons element-todo-list__clear-icon">clear</i>
+				<label className='label-for-close-contact-creator' htmlFor='contactCreator'>
+					<i className='material-icons element-todo-list__clear-icon'>clear</i>
 				</label>
 			</div>
-
 		</footer>
 	)
 }

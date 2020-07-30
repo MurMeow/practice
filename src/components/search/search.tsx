@@ -1,7 +1,7 @@
 import React from 'react'
 import './search.scss'
 
-export interface searchProps {
+export interface SearchProps {
 	nameIcon: string
 	placeholder: string
 	returnSearchValue: (arg0:string) => void

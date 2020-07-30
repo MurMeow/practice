@@ -2,8 +2,8 @@ import { CREATE_NEW_CONTACT, REMOVE_CONTACT } from '../types'
 import { ContactState } from '../interface'
 import defaultContacts from '../../consts/contacts.json'
 
-const initialState:ContactState= {
-	contacts: defaultContacts
+const initialState: ContactState = {
+	contacts: defaultContacts,
 }
 
 export function Contacts(state = initialState, action: any) {

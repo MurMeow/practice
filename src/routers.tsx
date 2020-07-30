@@ -9,10 +9,10 @@ function Router() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' component={ Home } />
-				<Route exact path='/currencyDetails' component={ CurrencyDetails } />
-				<Route exact path='/contactsDetails' component={ Contacts } />
-				<Route exact path='/todoList' component={ TaskManager } />
+				<Route exact path='/' component={Home} />
+				<Route exact path='/currencyDetails' component={CurrencyDetails} />
+				<Route exact path='/contactsDetails' component={Contacts} />
+				<Route exact path='/todoList' component={TaskManager} />
 			</Switch>
 		</>
 	)

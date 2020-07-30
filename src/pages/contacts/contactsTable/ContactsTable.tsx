@@ -3,18 +3,15 @@ import { v4 as uuidv4 } from 'uuid'
 import './contactsTable.scss'
 import { Contact } from '../../../store/interface'
 
-
 interface ContactsTableProps {
 	contacts: Contact[]
 }
 
-const ContactsTable: React.FC<ContactsTableProps> = ({contacts}) => {
-
+const ContactsTable: React.FC<ContactsTableProps> = ({ contacts }) => {
 	return (
 		<div className='contacts-table'>
-
-				<table summary="contacts">
-					<thead>
+			<table summary='contacts'>
+				<thead>
 					<tr>
 						<th>name</th>
 						<th>phone</th>
@@ -22,8 +19,8 @@ const ContactsTable: React.FC<ContactsTableProps> = ({contacts}) => {
 						<th>address</th>
 						<th>birthday</th>
 					</tr>
-					</thead>
-					<tbody>
+				</thead>
+				<tbody>
 					{contacts.map((item) => {
 						const externalId = uuidv4()
 						return (
@@ -36,9 +33,8 @@ const ContactsTable: React.FC<ContactsTableProps> = ({contacts}) => {
 							</tr>
 						)
 					})}
-					</tbody>
-				</table>
-
+				</tbody>
+			</table>
 		</div>
 	)
 }

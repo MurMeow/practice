@@ -10,7 +10,7 @@ const reducers = combineReducers({
 	CurrencyRequest,
 	GeneralState,
 	Contacts,
-	TodoList
+	TodoList,
 })
 
 const composeEnhancers = composeWithDevTools({})

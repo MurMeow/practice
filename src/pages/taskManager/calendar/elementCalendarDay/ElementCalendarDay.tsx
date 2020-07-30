@@ -5,13 +5,11 @@ import './elementCalendarDay.scss'
 import ElementTodoList from './elementTodoList/ElementTodoList'
 import { Store, Todo } from '../../../../store/interface'
 
-
 export interface ElementCalendarDayProps {
 	date: string
 }
 
-const ElementCalendarDay: React.FC<ElementCalendarDayProps> = ({date}) => {
-
+const ElementCalendarDay: React.FC<ElementCalendarDayProps> = ({ date }) => {
 	const { todoList } = useSelector((store: Store) => ({
 		todoList: store.TodoList.todoList,
 	}))
@@ -19,24 +17,19 @@ const ElementCalendarDay: React.FC<ElementCalendarDayProps> = ({date}) => {
 	const [tasksForToday, setTasksForToday] = useState<Todo[]>()
 
 	useEffect(() => {
-		setTasksForToday(todoList.filter(item => item.date === date))
+		setTasksForToday(todoList.filter((item) => item.date === date))
 	}, [date, todoList])
 
 	return (
 		<div>
-			{
-				tasksForToday?.map( (item) => {
-					const externalId = uuidv4()
-					return item.isActiveStatus && <ElementTodoList key={externalId} task={item}/>
-				})
-			}
-			{
-				tasksForToday?.map( (item) => {
-					const externalId = uuidv4()
-					return item.isActiveStatus===false && <ElementTodoList key={externalId} task={item}/>
-				})
-			}
-
+			{tasksForToday?.map((item) => {
+				const externalId = uuidv4()
+				return item.isActiveStatus && <ElementTodoList key={externalId} task={item} />
+			})}
+			{tasksForToday?.map((item) => {
+				const externalId = uuidv4()
+				return item.isActiveStatus === false && <ElementTodoList key={externalId} task={item} />
+			})}
 		</div>
 	)
 }

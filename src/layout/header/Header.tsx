@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import './header.scss'
 import FieldAdditionalFunctions from './fieldAdditionalFunctions/FieldAdditionalFunctions'
 
 const Header: React.FC = () => {
-
 	const [isOpenFieldAdditionalFunctions, setStateFieldAdditionalFunctions] = useState(false)
 
 	const changeStateFieldAdditionalFunctions = () => {
@@ -15,7 +14,10 @@ const Header: React.FC = () => {
 	return (
 		<div className='app-container navMenu'>
 			<header>
-				<FieldAdditionalFunctions isOpen={isOpenFieldAdditionalFunctions} changeState={changeStateFieldAdditionalFunctions}/>
+				<FieldAdditionalFunctions
+					isOpen={isOpenFieldAdditionalFunctions}
+					changeState={changeStateFieldAdditionalFunctions}
+				/>
 				<div className='main-data flex'>
 					<p>{moment().format('YYYY-MM-DD')}</p>
 					<Link to={'/'}>
@@ -26,7 +28,6 @@ const Header: React.FC = () => {
 				<label className='open' htmlFor='menu'>
 					<i className='fa fa-bars' />
 				</label>
-
 			</header>
 		</div>
 	)
