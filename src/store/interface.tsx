@@ -55,7 +55,7 @@ export interface ContactState {
 export interface Contact {
 	name: string
 	email?: string
-	phone: string
+	phone?: string
 	birthday?: string
 	address?: string
 }

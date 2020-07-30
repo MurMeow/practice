@@ -28,6 +28,7 @@
 }
 
 .task-form.compressed {
+  display: flex;
   .task-form__title-form {
     display: none;
   }
